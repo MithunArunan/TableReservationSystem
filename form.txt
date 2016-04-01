@@ -1,0 +1,338 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Restaurant Booking System by PHPJabbers.com</title>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<link type="text/css" rel="stylesheet" href="http://demo.phpjabbers.com/1444309470_509/app/web/css/reset.css" /><link type="text/css" rel="stylesheet" href="http://demo.phpjabbers.com/1444309470_509/core/third-party/jquery_ui/css/smoothness/jquery-ui.min.css" /><link type="text/css" rel="stylesheet" href="http://demo.phpjabbers.com/1444309470_509/core/framework/libs/pj/css/pj-all.css" /><link type="text/css" rel="stylesheet" href="http://demo.phpjabbers.com/1444309470_509/app/web/css/admin.css" /><link type="text/css" rel="stylesheet" href="http://demo.phpjabbers.com/1444309470_509/core/third-party/harvest/chosen/chosen.css" /><script src="http://demo.phpjabbers.com/1444309470_509/core/third-party/jquery/jquery-1.8.2.min.js"></script><script src="http://demo.phpjabbers.com/1444309470_509/app/web/js/pjAdminCore.js"></script><script src="http://demo.phpjabbers.com/1444309470_509/core/third-party/jquery_ui/js/jquery-ui.custom.min.js"></script><script src="http://demo.phpjabbers.com/1444309470_509/core/third-party/harvest/chosen/chosen.jquery.js"></script><script src="http://demo.phpjabbers.com/1444309470_509/core/third-party/validate/jquery.validate.min.js"></script><script src="http://demo.phpjabbers.com/1444309470_509/core/third-party/validate/additional-methods.js"></script><script src="http://demo.phpjabbers.com/1444309470_509/app/web/js/pjAdminBookings.js"></script>		<!--[if gte IE 9]>
+  		<style type="text/css">.gradient {filter: none}</style>
+		<![endif]-->
+	</head>
+	<body>
+		<div id="container">
+    		<div id="header">
+				<a href="http://www.phpjabbers.com/restaurant-booking-system/" id="logo" target="_blank"><img src="http://demo.phpjabbers.com/1444309470_509/app/web/img/backend/logo.png" alt="" /></a>
+			</div>
+			
+			<div id="middle">
+				<div id="leftmenu">
+					
+<div class="leftmenu-top"></div>
+<div class="leftmenu-middle">
+	<ul class="menu">
+		<li><a href="/1444309470_509/index.php?controller=pjAdminBookings&amp;action=pjActionSchedule" class="menu-focus"><span class="menu-bookings">&nbsp;</span>Reservations</a></li>
+					<li><a href="/1444309470_509/index.php?controller=pjAdminVouchers&amp;action=pjActionIndex" class=""><span class="menu-vouchers">&nbsp;</span>Vouchers</a></li>
+			<li><a href="/1444309470_509/index.php?controller=pjAdminTime&amp;action=pjActionIndex" class=""><span class="menu-restaurants">&nbsp;</span>Restaurant</a></li>
+			<li><a href="/1444309470_509/index.php?controller=pjAdminOptions&amp;action=pjActionIndex" class=""><span class="menu-options">&nbsp;</span>Options</a></li>
+			<li><a href="/1444309470_509/index.php?controller=pjAdminUsers&amp;action=pjActionIndex" class=""><span class="menu-users">&nbsp;</span>Users</a></li>
+			<li><a href="/1444309470_509/index.php?controller=pjAdminOptions&amp;action=pjActionInstall" class=""><span class="menu-install">&nbsp;</span>Install</a></li>
+			<li><a href="/1444309470_509/index.php?controller=pjAdminOptions&amp;action=pjActionPreview" target="_blank"><span class="menu-preview">&nbsp;</span>Preview</a></li>
+					<li><a href="/1444309470_509/index.php?controller=pjAdmin&amp;action=pjActionLogout"><span class="menu-logout">&nbsp;</span>Logout</a></li>
+	</ul>
+</div>
+<div class="leftmenu-bottom"></div>				</div>
+				<div id="right">
+					<div class="content-top"></div>
+					<div class="content-middle" id="content">
+						<div class="ui-tabs ui-widget ui-widget-content ui-corner-all b10">
+		<ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+			<li class="ui-state-default ui-corner-top"><a href="/1444309470_509/index.php?controller=pjAdminBookings&amp;action=pjActionSchedule">Schedule</a></li>
+			<li class="ui-state-default ui-corner-top"><a href="/1444309470_509/index.php?controller=pjAdminBookings&amp;action=pjActionIndex">Reservations List</a></li>
+			<li class="ui-state-default ui-corner-top ui-tabs-active ui-state-active"><a href="/1444309470_509/index.php?controller=pjAdminBookings&amp;action=pjActionCreate">Add Reservation</a></li>
+		</ul>
+	</div>
+			<div class="notice-box">
+			<div class="notice-top"></div>
+			<div class="notice-middle">
+				<span class="notice-info">&nbsp;</span>
+				<span class="block bold">Add new reservation</span><span class="block">Fill in the form below to add a new reservation.</span><a href="#" class="notice-close"></a>			</div>
+			<div class="notice-bottom"></div>
+		</div>
+			<form action="/1444309470_509/index.php?controller=pjAdminBookings&amp;action=pjActionCreate" method="post" class="form pj-form" id="frmCreateBooking">
+		<input type="hidden" name="booking_create" value="1" />
+		<input type="hidden" name="tab_id" value="tabs-1" />
+		
+		<div id="tabs">
+			<ul>
+				<li><a href="#tabs-1">Reservation Details</a></li>
+				<li><a href="#tabs-2">Client Details</a></li>
+			</ul>
+	
+			<div id="tabs-1">
+				<p>
+					<label class="title">From date/time</label>
+					<span class="pj-form-field-custom pj-form-field-custom-after float_left r5">
+						<input type="text" name="date" id="date" class="pj-form-field pointer w80 datepick" readonly="readonly" rel="1" rev="dd-mm-yy" value="08-10-2015" />
+						<span class="pj-form-field-after"><abbr class="pj-form-field-icon-date"></abbr></span>
+					</span>
+					<span id="rb_working_time" class="inline_block">
+					<select name="hour" id="hour" class="pj-form-field pj-form-field-select pj-booking-time"><option value="00">00</option><option value="01">01</option><option value="02">02</option><option value="03">03</option><option value="04">04</option><option value="05">05</option><option value="06">06</option><option value="07">07</option><option value="08">08</option><option value="09">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13" selected="selected">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option></select><select name="minute" id="minute" class="pj-form-field pj-form-field-select pj-booking-time"><option value="00">00</option><option value="05">05</option><option value="10">10</option><option value="15">15</option><option value="20">20</option><option value="25">25</option><option value="30">30</option><option value="35">35</option><option value="40">40</option><option value="45">45</option><option value="50">50</option><option value="55">55</option></select>					</span>
+				</p>
+				<p>
+					<label class="title">To date/time</label>
+					<span class="inline_block">
+						<span class="pj-form-field-custom pj-form-field-custom-after float_left r5">
+							<input type="text" name="date_to" id="date_to" class="pj-form-field pointer w80 datepick" readonly="readonly" rel="1" rev="dd-mm-yy"  value="08-10-2015" />
+							<span class="pj-form-field-after"><abbr class="pj-form-field-icon-date"></abbr></span>
+						</span>
+						<span class="inline_block">
+						<select name="hour_to" id="hour_to" class="pj-form-field pj-form-field-select"><option value="00">00</option><option value="01">01</option><option value="02">02</option><option value="03">03</option><option value="04">04</option><option value="05">05</option><option value="06">06</option><option value="07">07</option><option value="08">08</option><option value="09">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16" selected="selected">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option></select>							<select name="minute_to" id="minute_to" class="pj-form-field pj-form-field-select"><option value="00">00</option><option value="05">05</option><option value="10">10</option><option value="15">15</option><option value="20">20</option><option value="25">25</option><option value="30">30</option><option value="35">35</option><option value="40">40</option><option value="45">45</option><option value="50">50</option><option value="55">55</option></select>						</span>
+						<input type="hidden" id="validate_datetime" name="validate_datetime" value="7320"/>
+					</span>
+				</p>
+				
+				<p>
+					<label class="title">Unique ID</label>
+					<span class="inline-block">
+						<input type="text" id="uuid" name="uuid" value="1444309794" class="pj-form-field w136" />
+					</span>
+				</p>
+				<div class="p">
+					<label class="title">Status</label>
+					<span class="inline-block">
+						<select name="status" id="status" class="pj-form-field w150 required">
+							<option value="">-- Choose--</option>
+							<option value="cancelled">Cancelled</option><option value="confirmed">Confirmed</option><option value="enquiry">Enquiry</option><option value="pending">Pending</option>						</select>
+					</span>
+				</div>
+				<p>
+					<label class="title">Deposit fee</label>
+					<span class="pj-form-field-custom pj-form-field-custom-before">
+						<span class="pj-form-field-before"><abbr class="pj-form-field-icon-text">&euro;</abbr></span>
+						<input type="text" id="total" name="total" value="50.00" class="pj-form-field number w108 required" />
+					</span>
+				</p>
+				<p>
+					<label class="title">Voucher code</label>
+					<span class="inline-block">
+						<input type="text" name="code" id="code" class="pj-form-field w136 float_left r10" />
+						<label id="discount_format" style="display:none;"></label>
+					</span>
+				</p>
+				
+				<div class="p">
+					<label class="title">Deposit paid</label>
+					<div id="is_paid">
+					<input type="radio" id="is_paid_F" name="is_paid" value="F" checked="checked" /><label for="is_paid_F">No</label><input type="radio" id="is_paid_T" name="is_paid" value="T" /><label for="is_paid_T">Yes</label>					</div>
+				</div>
+				<p>
+					<label class="title">Payment method</label>
+					<span class="inline-block">
+						<select name="payment_method" id="payment_method" class="pj-form-field w150 required">
+							<option value="">-- Choose--</option>
+							<option value="authorize">Authorize.net</option><option value="bank">Bank Account</option><option value="cash">Cash</option><option value="creditcard">Credit Card</option><option value="paypal">Paypal</option>						</select>
+					</span>
+				</p>
+				<p class="boxCC" style="display: none;">
+					<label class="title">CC type</label>
+					<span class="inline-block">
+						<select name="cc_type" class="pj-form-field w150">
+							<option value="">---</option>
+							<option value="AmericanExpress">AmericanExpress</option><option value="Maestro">Maestro</option><option value="MasterCard">MasterCard</option><option value="Visa">Visa</option>						</select>
+					</span>
+				</p>
+				<p class="boxCC" style="display: none;">
+					<label class="title">CC number</label>
+					<span class="inline-block">
+						<input type="text" name="cc_num" id="cc_num" class="pj-form-field w136" />
+					</span>
+				</p>
+				<p class="boxCC" style="display: none;">
+					<label class="title">CC expiration date</label>
+					<span class="inline-block">
+						<select name="cc_exp_month" class="pj-form-field">
+							<option value="">---</option>
+							<option value="1">January</option><option value="2">February</option><option value="3">March</option><option value="4">April</option><option value="5">May</option><option value="6">June</option><option value="7">July</option><option value="8">August</option><option value="9">September</option><option value="10">October</option><option value="11">November</option><option value="12">December</option>						</select>
+						<select name="cc_exp_year" class="pj-form-field">
+							<option value="">---</option>
+							<option value="2015">2015</option><option value="2016">2016</option><option value="2017">2017</option><option value="2018">2018</option><option value="2019">2019</option><option value="2020">2020</option><option value="2021">2021</option><option value="2022">2022</option><option value="2023">2023</option><option value="2024">2024</option><option value="2025">2025</option>						</select>
+					</span>
+				</p>
+				<p class="boxCC" style="display: none">
+					<label class="title">CC security code</label>
+					<span class="inline-block">
+						<input type="text" name="cc_code" id="cc_code" class="pj-form-field w100" />
+					</span>
+				</p>
+				
+				<p>
+					<label class="title">People</label>
+					<span class="inline-block">
+						<input type="text" name="people" id="people" class="pj-form-field field-int w80 required" value="1"/>
+					</span>
+				</p>
+				<div class="p">
+					<label class="title">Table</label>
+					<table id="tblBookingTables" class="pj-table" cellpadding="0" cellspacing="0" style="width: auto;">
+						<thead>
+							<tr>
+								<th>Table name</th>
+								<th>&nbsp;</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="pj-table-row-odd">
+								<td>
+									<select name="table_id[]" class="rbTable select w150">
+										<option value="">---</option>
+																					<option value="1">
+												1, 4 People											</option>
+																						<option value="2">
+												2, 4 People											</option>
+																						<option value="3">
+												3, 4 People											</option>
+																						<option value="4">
+												4, 4 People											</option>
+																						<option value="5">
+												5, 4 People											</option>
+																						<option value="6">
+												6, 4 People											</option>
+																						<option value="7">
+												7, 4 People											</option>
+																						<option value="8">
+												8, 4 People											</option>
+																						<option value="9">
+												9, 4 People											</option>
+																						<option value="10">
+												10, 4 People											</option>
+																						<option value="11">
+												11, 6 People											</option>
+																						<option value="12">
+												12, 6 People											</option>
+																						<option value="13">
+												13, 6 People											</option>
+																						<option value="15">
+												15, 10 People											</option>
+																						<option value="16">
+												16, 10 People											</option>
+																						<option value="17">
+												17, 15 People											</option>
+																						<option value="19">
+												14, 10 People											</option>
+																				</select>
+								</td>
+								<td><a href="/1444309470_509/index.php" class="btnRemoveTable"></a></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<p>
+					<label class="title">&nbsp;</label>
+					<span class="inline_block">
+						<a href="/1444309470_509/index.php" class="btnAddTable">Add table</a>
+						<input type="hidden" id="validate_table" name="validate_table" value="522"/>
+					</span>
+				</p>
+				<p>
+					<label class="title">&nbsp;</label>
+					<input type="submit" value="Save" class="pj-button" />
+				</p>
+			</div>
+			
+			<div id="tabs-2">
+				<p>
+					<label class="title">Title</label>
+					<span class="inline-block">
+						<select name="c_title" id="c_title" class="pj-form-field w150 required">
+							<option value="">-- Choose--</option>
+							<option value="mr">Mr</option><option value="mrs">Mrs</option><option value="ms">Ms</option><option value="dr">Dr</option><option value="prof">Prof</option><option value="rev">Rev</option><option value="other">Other</option>						</select>
+					</span>
+				</p>
+				<p>
+					<label class="title">First name</label>
+					<span class="inline-block">
+						<input type="text" name="c_fname" id="c_fname" class="pj-form-field w250 required" />
+					</span>
+				</p>
+				<p>
+					<label class="title">Last name</label>
+					<span class="inline-block">
+						<input type="text" name="c_lname" id="c_lname" class="pj-form-field w250 required" />
+					</span>
+				</p>
+				<p>
+					<label class="title">Phone</label>
+					<span class="inline-block">
+						<input type="text" name="c_phone" id="c_phone" class="pj-form-field w250 required" />
+					</span>
+				</p>
+				<p>
+					<label class="title">Email</label>
+					<span class="inline-block">
+						<input type="text" name="c_email" id="c_email" class="pj-form-field w250 required" />
+					</span>
+				</p>
+				<p>
+					<label class="title">Notes</label>
+					<span class="inline-block">
+						<textarea name="c_notes" id="c_notes" class="pj-form-field w500 h120"></textarea>
+					</span>
+				</p>
+				<div>
+					<p>
+						<label class="title">Company name</label>
+						<span class="inline-block">
+							<input type="text" name="c_company" id="c_company" class="pj-form-field w300" />
+						</span>
+					</p>
+					<p>
+						<label class="title">Address</label>
+						<span class="inline-block">
+							<input type="text" name="c_address" id="c_address" class="pj-form-field w300" />
+						</span>
+					</p>
+					<p>
+						<label class="title">City</label>
+						<span class="inline-block">
+							<input type="text" name="c_city" id="c_city" class="pj-form-field w300"/>
+						</span>
+					</p>
+					<p>
+						<label class="title">County/Region/State</label>
+						<span class="inline-block">
+							<input type="text" name="c_state" id="c_state" class="pj-form-field w300" />
+						</span>
+					</p>
+					<p>
+						<label class="title">Postcode/Zip</label>
+						<span class="inline-block">
+							<input type="text" name="c_zip" id="c_zip" class="pj-form-field w300" />
+						</span>
+					</p>
+					<p>
+						<label class="title">Country</label>
+						<span class="inline-block">
+							<select name="c_country" id="c_country" class="pj-form-field w300">
+								<option value="">-- Choose--</option>
+								<option value="1">Afghanistan</option><option value="2">Åland Islands</option><option value="3">Albania</option><option value="4">Algeria</option><option value="5">American Samoa</option><option value="6">Andorra</option><option value="7">Angola</option><option value="8">Anguilla</option><option value="9">Antarctica</option><option value="10">Antigua and Barbuda</option><option value="11">Argentina</option><option value="12">Armenia</option><option value="13">Aruba</option><option value="14">Australia</option><option value="15">Austria</option><option value="16">Azerbaijan</option><option value="17">Bahamas</option><option value="18">Bahrain</option><option value="19">Bangladesh</option><option value="20">Barbados</option><option value="21">Belarus</option><option value="22">Belgium</option><option value="23">Belize</option><option value="24">Benin</option><option value="25">Bermuda</option><option value="26">Bhutan</option><option value="27">Bolivia, Plurinational State of</option><option value="28">Bonaire, Sint Eustatius and Saba</option><option value="29">Bosnia and Herzegovina</option><option value="30">Botswana</option><option value="31">Bouvet Island</option><option value="32">Brazil</option><option value="33">British Indian Ocean Territory</option><option value="34">Brunei Darussalam</option><option value="35">Bulgaria</option><option value="36">Burkina Faso</option><option value="37">Burundi</option><option value="38">Cambodia</option><option value="39">Cameroon</option><option value="40">Canada</option><option value="41">Cape Verde</option><option value="42">Cayman Islands</option><option value="43">Central African Republic</option><option value="44">Chad</option><option value="45">Chile</option><option value="46">China</option><option value="47">Christmas Island</option><option value="48">Cocos array(Keeling) Islands</option><option value="49">Colombia</option><option value="50">Comoros</option><option value="51">Congo</option><option value="52">Congo, the Democratic Republic of the</option><option value="53">Cook Islands</option><option value="54">Costa Rica</option><option value="55">Côte d'Ivoire</option><option value="56">Croatia</option><option value="57">Cuba</option><option value="58">Curaçao</option><option value="59">Cyprus</option><option value="60">Czech Republic</option><option value="61">Denmark</option><option value="62">Djibouti</option><option value="63">Dominica</option><option value="64">Dominican Republic</option><option value="65">Ecuador</option><option value="66">Egypt</option><option value="67">El Salvador</option><option value="68">Equatorial Guinea</option><option value="69">Eritrea</option><option value="70">Estonia</option><option value="71">Ethiopia</option><option value="72">Falkland Islands array(Malvinas)</option><option value="73">Faroe Islands</option><option value="74">Fiji</option><option value="75">Finland</option><option value="76">France</option><option value="77">French Guiana</option><option value="78">French Polynesia</option><option value="79">French Southern Territories</option><option value="80">Gabon</option><option value="81">Gambia</option><option value="82">Georgia</option><option value="83">Germany</option><option value="84">Ghana</option><option value="85">Gibraltar</option><option value="86">Greece</option><option value="87">Greenland</option><option value="88">Grenada</option><option value="89">Guadeloupe</option><option value="90">Guam</option><option value="91">Guatemala</option><option value="92">Guernsey</option><option value="93">Guinea</option><option value="94">Guinea-Bissau</option><option value="95">Guyana</option><option value="96">Haiti</option><option value="97">Heard Island and McDonald Islands</option><option value="98">Holy See array(Vatican City State)</option><option value="99">Honduras</option><option value="100">Hong Kong</option><option value="101">Hungary</option><option value="102">Iceland</option><option value="103">India</option><option value="104">Indonesia</option><option value="105">Iran, Islamic Republic of</option><option value="106">Iraq</option><option value="107">Ireland</option><option value="108">Isle of Man</option><option value="109">Israel</option><option value="110">Italy</option><option value="111">Jamaica</option><option value="112">Japan</option><option value="113">Jersey</option><option value="114">Jordan</option><option value="115">Kazakhstan</option><option value="116">Kenya</option><option value="117">Kiribati</option><option value="118">Korea, Democratic People's Republic of</option><option value="119">Korea, Republic of</option><option value="120">Kuwait</option><option value="121">Kyrgyzstan</option><option value="122">Lao People's Democratic Republic</option><option value="123">Latvia</option><option value="124">Lebanon</option><option value="125">Lesotho</option><option value="126">Liberia</option><option value="127">Libya</option><option value="128">Liechtenstein</option><option value="129">Lithuania</option><option value="130">Luxembourg</option><option value="131">Macao</option><option value="132">Macedonia, The Former Yugoslav Republic of</option><option value="133">Madagascar</option><option value="134">Malawi</option><option value="135">Malaysia</option><option value="136">Maldives</option><option value="137">Mali</option><option value="138">Malta</option><option value="139">Marshall Islands</option><option value="140">Martinique</option><option value="141">Mauritania</option><option value="142">Mauritius</option><option value="143">Mayotte</option><option value="144">Mexico</option><option value="145">Micronesia, Federated States of</option><option value="146">Moldova, Republic of</option><option value="147">Monaco</option><option value="148">Mongolia</option><option value="149">Montenegro</option><option value="150">Montserrat</option><option value="151">Morocco</option><option value="152">Mozambique</option><option value="153">Myanmar</option><option value="154">Namibia</option><option value="155">Nauru</option><option value="156">Nepal</option><option value="157">Netherlands</option><option value="158">New Caledonia</option><option value="159">New Zealand</option><option value="160">Nicaragua</option><option value="161">Niger</option><option value="162">Nigeria</option><option value="163">Niue</option><option value="164">Norfolk Island</option><option value="165">Northern Mariana Islands</option><option value="166">Norway</option><option value="167">Oman</option><option value="168">Pakistan</option><option value="169">Palau</option><option value="170">Palestine, State of</option><option value="171">Panama</option><option value="172">Papua New Guinea</option><option value="173">Paraguay</option><option value="174">Peru</option><option value="175">Philippines</option><option value="176">Pitcairn</option><option value="177">Poland</option><option value="178">Portugal</option><option value="179">Puerto Rico</option><option value="180">Qatar</option><option value="181">Réunion</option><option value="182">Romania</option><option value="183">Russian Federation</option><option value="184">Rwanda</option><option value="185">Saint Barthélemy</option><option value="186">Saint Helena, Ascension and Tristan da Cunha</option><option value="187">Saint Kitts and Nevis</option><option value="188">Saint Lucia</option><option value="189">Saint Martin array(French part)</option><option value="190">Saint Pierre and Miquelon</option><option value="191">Saint Vincent and the Grenadines</option><option value="192">Samoa</option><option value="193">San Marino</option><option value="194">Sao Tome and Principe</option><option value="195">Saudi Arabia</option><option value="196">Senegal</option><option value="197">Serbia</option><option value="198">Seychelles</option><option value="199">Sierra Leone</option><option value="200">Singapore</option><option value="201">Sint Maarten array(Dutch part)</option><option value="202">Slovakia</option><option value="203">Slovenia</option><option value="204">Solomon Islands</option><option value="205">Somalia</option><option value="206">South Africa</option><option value="207">South Georgia and the South Sandwich Islands</option><option value="208">South Sudan</option><option value="209">Spain</option><option value="210">Sri Lanka</option><option value="211">Sudan</option><option value="212">Suriname</option><option value="213">Svalbard and Jan Mayen</option><option value="214">Swaziland</option><option value="215">Sweden</option><option value="216">Switzerland</option><option value="217">Syrian Arab Republic</option><option value="218">Taiwan, Province of China</option><option value="219">Tajikistan</option><option value="220">Tanzania, United Republic of</option><option value="221">Thailand</option><option value="222">Timor-Leste</option><option value="223">Togo</option><option value="224">Tokelau</option><option value="225">Tonga</option><option value="226">Trinidad and Tobago</option><option value="227">Tunisia</option><option value="228">Turkey</option><option value="229">Turkmenistan</option><option value="230">Turks and Caicos Islands</option><option value="231">Tuvalu</option><option value="232">Uganda</option><option value="233">Ukraine</option><option value="234">United Arab Emirates</option><option value="235">United Kingdom</option><option value="236">United States</option><option value="237">United States Minor Outlying Islands</option><option value="238">Uruguay</option><option value="239">Uzbekistan</option><option value="240">Vanuatu</option><option value="241">Venezuela, Bolivarian Republic of</option><option value="242">Viet Nam</option><option value="243">Virgin Islands, British</option><option value="244">Virgin Islands, U.S.</option><option value="245">Wallis and Futuna</option><option value="246">Western Sahara</option><option value="247">Yemen</option><option value="248">Zambia</option><option value="249">Zimbabwe</option>							</select>
+						</span>
+					</p>
+				</div>
+				<p>
+					<label class="title">&nbsp;</label>
+					<input type="submit" value="Save" class="pj-button" />
+				</p>
+			</div>
+		</div>
+	</form>
+	<div style="display: none" title="Availability" id="dialogAvailability"></div>
+	
+	<script type="text/javascript">
+	var myLabel = myLabel || {};
+	myLabel.uuid_used = "Unique ID was used.";
+	myLabel.validate_datetime = "To date/time must be greater than From date/time.";
+	myLabel.validate_table = "The selected table was reserved.";
+	</script>	
+						</div>
+					<div class="content-bottom"></div>
+				</div> <!-- content -->
+				<div class="clear_both"></div>
+			</div> <!-- middle -->
+		
+		</div> <!-- container -->
+		<div id="footer-wrap">
+			<div id="footer">
+			   	<p><a href="http://www.phpjabbers.com/" target="_blank">PHP Scripts</a> Copyright &copy; 2015 <a href="http://www.stivasoft.com" target="_blank">StivaSoft Ltd</a></p>
+	        </div>
+        </div>
+	</body>
+</html>

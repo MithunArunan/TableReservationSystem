@@ -1,0 +1,201 @@
+<!doctype html>
+<html>
+	<head>
+		<title></title>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<link type="text/css" rel="stylesheet" href="css/style.css" /><link type="text/css" rel="stylesheet" href="css/style.css" /><link type="text/css" rel="stylesheet" href="css/im.css" /><link type="text/css" rel="stylesheet" href="css/admin.css" /><link type="text/css" rel="stylesheet" href="css/new.css" /><script src="http://demo.phpjabbers.com/1444309470_509/core/third-party/jquery/jquery-1.8.2.min.js"></script><script src="http://demo.phpjabbers.com/1444309470_509/app/web/js/pjAdminCore.js"></script><script src="http://demo.phpjabbers.com/1444309470_509/core/third-party/jquery_ui/js/jquery-ui.custom.min.js"></script><script src="http://demo.phpjabbers.com/1444309470_509/core/third-party/harvest/chosen/chosen.jquery.js"></script><script src="http://demo.phpjabbers.com/1444309470_509/core/third-party/validate/jquery.validate.min.js"></script><script src="http://demo.phpjabbers.com/1444309470_509/core/third-party/validate/additional-methods.js"></script><script src="http://demo.phpjabbers.com/1444309470_509/app/web/js/pjAdminBookings.js"></script>		<!--[if gte IE 9]>
+  		<style type="text/css">.gradient {filter: none}</style>
+		<![endif]-->
+	</head>
+	<body>
+		<div id="container">
+    	
+			
+			<div id="middle">
+				<div id="leftmenu">
+					
+<div class="leftmenu-top"></div>
+<div class="leftmenu-bottom"></div>				</div>
+				<div id="right">
+					<div class="content-top"></div>
+					<div class="content-middle" id="content">
+						<div class="ui-tabs ui-widget ui-widget-content ui-corner-all b10">
+		<ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+			<li class="ui-state-default ui-corner-top ui-tabs-active ui-state-active"><a href="/1444309470_509/index.php?controller=pjAdminBookings&amp;action=pjActionCreate">Add Reservation</a></li>
+		</ul>
+	</div>
+			<div class="notice-box">
+			<div class="notice-top"></div>
+			<div class="notice-middle">
+				<span class="notice-info">&nbsp;</span>
+				<span class="block bold">Add new reservation</span><span class="block">Fill in the form below to add a new reservation.</span><a href="#" class="notice-close"></a>			</div>
+			<div class="notice-bottom"></div>
+		</div>
+			<form action="/1444309470_509/index.php?controller=pjAdminBookings&amp;action=pjActionCreate" method="post" class="form pj-form" id="frmCreateBooking">
+		<input type="hidden" name="booking_create" value="1" />
+		<input type="hidden" name="tab_id" value="tabs-1" />
+		
+		<div id="tabs">
+			<ul>
+				<li><a href="#tabs-1">Reservation Details</a></li>
+				<li><a href="#tabs-2">Client Details</a></li>
+			</ul>
+	
+			<div id="tabs-1">
+				<p>
+					<label class="title"> date/time</label>
+					<span class="pj-form-field-custom pj-form-field-custom-after float_left r5">
+						<input type="text" name="date" id="date" class="pj-form-field pointer w80 datepick" readonly="readonly" rel="1" rev="dd-mm-yy" value="08-10-2015" />
+						<span class="pj-form-field-after"><abbr class="pj-form-field-icon-date"></abbr></span>
+					</span>
+					<span id="rb_working_time" class="inline_block">
+					<select name="hour" id="hour" class="pj-form-field pj-form-field-select pj-booking-time"><option value="00">00</option><option value="01">01</option><option value="02">02</option><option value="03">03</option><option value="04">04</option><option value="05">05</option><option value="06">06</option><option value="07">07</option><option value="08">08</option><option value="09">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13" selected="selected">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option></select><select name="minute" id="minute" class="pj-form-field pj-form-field-select pj-booking-time"><option value="00">00</option><option value="05">05</option><option value="10">10</option><option value="15">15</option><option value="20">20</option><option value="25">25</option><option value="30">30</option><option value="35">35</option><option value="40">40</option><option value="45">45</option><option value="50">50</option><option value="55">55</option></select>					</span>
+				</p>	
+					<div class="p">
+					<label class="title">Status</label>
+					<span class="inline-block">
+						<select name="status" id="status" class="pj-form-field w150 required">
+							<option value="">-- Choose--</option>
+							<option value="cancelled">Cancelled</option><option value="confirmed">Confirmed</option>						</select>
+					</span>
+				</div>
+				<div class="p">
+					<label class="title">Celebration</label>
+					<span class="inline-block">
+						<select name="status" id="status" class="pj-form-field w150 required">
+							<option value="">-- Choose--</option>
+							<option value="wedding">Wedding</option><option value="bday">Birth Day</option><option value="meeting">Meeting</option>						</select>
+					</span>
+				</div>
+				<p>
+					<label class="title">Deposit fee</label>
+					<span class="pj-form-field-custom pj-form-field-custom-before">
+						<span class="pj-form-field-before"><abbr class="pj-form-field-icon-text">&euro;</abbr></span>
+						<input type="text" id="total" name="total" value="50.00" class="pj-form-field number w108 required" />
+					</span>
+				</p>		
+			
+				<p>
+					<label class="title">People</label>
+					<span class="inline-block">
+						<input type="text" name="people" id="people" class="pj-form-field field-int w80 required" value="1"/>
+					</span>
+				</p>
+				<div class="p">
+					<label class="title">Table</label>
+					<table id="tblBookingTables" class="pj-table" cellpadding="0" cellspacing="0" style="width: auto;">
+						<thead>
+							<tr>
+								<th>Table name</th>
+								<th>&nbsp;</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="pj-table-row-odd">
+								<td>
+									<select name="table_id[]" class="rbTable select w150">
+										<option value="">---</option>
+																					<option value="1">
+												1, 4 People											</option>
+																						<option value="2">
+												2, 4 People											</option>
+																						<option value="3">
+												3, 4 People											</option>
+																						<option value="4">
+												4, 4 People											</option>
+																						<option value="5">
+												5, 4 People											</option>
+																						<option value="6">
+												6, 4 People											</option>
+																						<option value="7">
+												7, 4 People											</option>
+																						<option value="8">
+												8, 4 People											</option>
+																						<option value="9">
+												9, 4 People											</option>
+																						<option value="10">
+												10, 4 People											</option>
+																						<option value="11">
+												11, 6 People											</option>
+																						<option value="12">
+												12, 6 People											</option>
+																						<option value="13">
+												13, 6 People											</option>
+																						<option value="15">
+												15, 10 People											</option>
+																						<option value="16">
+												16, 10 People											</option>
+																						<option value="17">
+												17, 15 People											</option>
+																						<option value="19">
+												14, 10 People											</option>
+																				</select>
+								</td>
+								<td><a href="/1444309470_509/index.php" class="btnRemoveTable"></a></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<p>
+					<label class="title">&nbsp;</label>
+					<input type="submit" value="Save" class="pj-button" />
+				</p>
+			</div>
+			
+			<div id="tabs-2">
+				<p>
+					<label class="title">Title</label>
+					<span class="inline-block">
+						<select name="c_title" id="c_title" class="pj-form-field w150 required">
+							<option value="">-- Choose--</option>
+							<option value="mr">Mr</option><option value="mrs">Mrs</option><option value="ms">Ms</option><option value="dr">Dr</option><option value="prof">Prof</option><option value="rev">Rev</option><option value="other">Other</option>						</select>
+					</span>
+				</p>
+				<p>
+					<label class="title">First name</label>
+					<span class="inline-block">
+						<input type="text" name="c_fname" id="c_fname" class="pj-form-field w250 required" />
+					</span>
+				</p>
+				<p>
+					<label class="title">Last name</label>
+					<span class="inline-block">
+						<input type="text" name="c_lname" id="c_lname" class="pj-form-field w250 required" />
+					</span>
+				</p>
+				<p>
+					<label class="title">Phone</label>
+					<span class="inline-block">
+						<input type="text" name="c_phone" id="c_phone" class="pj-form-field w250 required" />
+					</span>
+				</p>
+				<p>
+					<label class="title">Email</label>
+					<span class="inline-block">
+						<input type="text" name="c_email" id="c_email" class="pj-form-field w250 required" />
+					</span>
+				</p>
+				<p>
+					<label class="title">&nbsp;</label>
+					<input type="submit" value="Save" class="pj-button" />
+				</p>
+			</div>
+		</div>
+	</form>
+	<div style="display: none" title="Availability" id="dialogAvailability"></div>
+	
+	<script type="text/javascript">
+	var myLabel = myLabel || {};
+	myLabel.uuid_used = "Unique ID was used.";
+	myLabel.validate_datetime = "To date/time must be greater than From date/time.";
+	myLabel.validate_table = "The selected table was reserved.";
+	</script>	
+						</div>
+					<div class="content-bottom"></div>
+				</div> <!-- content -->
+				<div class="clear_both"></div>
+			</div> <!-- middle -->
+		
+		</div> <!-- container -->
+	</body>
+</html>

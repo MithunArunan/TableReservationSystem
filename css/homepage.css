@@ -1,0 +1,132 @@
+html {
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding:10px;
+}
+
+
+div{
+padding:0;
+}
+
+.navbar{
+display:inline:block;
+
+}
+
+.navbar p, h1{
+display:inline;
+}
+.navbar h1{
+font-family: -webkit-body;
+font-style: normal;
+
+}
+
+
+a{
+text-decoration:none;
+}
+
+div.navbar-div ul,div.sideBar ul{
+ list-style-type:none;
+ margin:0;
+ padding:0;
+ overflow:hidden;
+}
+
+.navbar-div{
+ background-color:rgba(13, 12, 12, 0.5);
+ color:#ffffff;
+}
+
+div.navbar-div li{
+	display:inline;
+	float: left;
+}
+
+
+div.navbar-div li a{
+padding: 20px;
+display: inline-block;
+font-family: sans-serif;
+font-weight: bolder;
+color:#DDD6D6;
+text-decoration:none;
+}
+
+div.navbar-div li a:hover{
+  background-color:#6F6A6A;
+}
+
+#logReg{
+float:right;
+display:inline-block;
+padding: 5px;
+}	
+
+div.topContent{
+display:inline-flex;
+}
+.content{
+padding:15px;
+}
+
+.content h1{
+font-family: serif;
+font-size: x-large;
+}
+
+.content{
+width:900px;
+float:left;
+border-style: inset;
+}
+
+.hotnews h1, .hotnews p , .hotnews a{
+display:inline;
+}
+div.sideBar{
+border-style:none;
+padding:20px;
+}
+
+div.sideBar h2{
+font-weight: 100;
+margin-left: 10px;
+font-style: oblique;
+}
+
+.commonnews h1, .commonnews p , .commonnews a{
+display:inline;
+}
+
+div.footer{
+display: inline-flex;
+padding: 5px;
+width: 100%;
+color: white;
+font-weight: 800;
+font-style: oblique;
+font-family: sans-serif;
+}
+
+div.footer1 h6{
+
+}
+
+[type="button"]
+{
+	text-align:center;
+}
+
+.contributeF td{
+	padding:5px;
+}
+
+//Use pseudo selectors for the above elemtns in the Bar
